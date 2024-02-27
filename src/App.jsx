@@ -1,14 +1,21 @@
-import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
-//import './App.css'
+import Contact from "./assets/Contact"
+import Hello from "./assets/Hello"
+import Counter from "./Counter";
 
 function App() {
 
+  const helloData = [
+    {name: "Mike", surname: "zaza"},
+    {name: "Dada", surname: "zaza"}
+  ];
+
   return (
     <div>
-      <h1>Hello!</h1>
-      <h2>This is my first React App</h2>
+      {helloData.map((data,index) => (
+          <Hello key={index} name={data.name} surname = {data.surname}/>
+      ))}
+      <Contact email="youaremyhopes@gmail.com" phone = "0971160106"/>
+      <Counter/>
     </div>
   )
 }
